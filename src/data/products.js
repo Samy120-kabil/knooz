@@ -7,7 +7,8 @@ export const products = [
       "طبة مدورة مستوردة عالية الجودة، متينة وتناسب مختلف الاستخدامات المكتبية.",
     price: 4,
     category: "office",
-    image: "/products/tabba_round.jpg",
+    // image: "/products/tabba_round.jpg",
+    image: "../../public/products/tabba_round.jpg",
     badge: "الأكثر مبيعاً",
   },
   {
@@ -44,7 +45,7 @@ export const products = [
       "كالون درج عالي الجودة مع مفاتيح، سهل التركيب ويوفر أماناً تاماً لأدراجك.",
     price: 13,
     category: "office",
-    image: "public/products/photo_2026-04-24_22-50-4666.jpg",
+    image: "../../public/products/photo_2026-04-24_22-50-4666.jpg",
     badge: "حصري",
   },
   {
@@ -72,7 +73,8 @@ export const products = [
     description: "شريط مكواة برايلى عريض3سم الكرتونا",
     price: 3250,
     category: "office",
-    image: "public/products/photo_2026-04-24_22-57-48888.jpg",
+    // image: "public/products/photo_2026-04-24_22-57-48888.jpg",
+    image: "../../public/products/photo_2026-04-24_22-57-48888.jpg",
     badge: "سعر الكرتونة",
   },
   {
@@ -127,7 +129,7 @@ export const products = [
     description: "رجل بيانو سوداء أنيقة بمقاس 15 سم للمكاتب والأثاث.",
     price: 11,
     category: "office",
-    image: "public/products/photo_2026-04-24_23-04-43333333.jpg",
+    image: "../../public/products/photo_2026-04-24_23-04-43333333.jpg",
     badge: null,
   },
 
