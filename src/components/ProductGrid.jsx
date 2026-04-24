@@ -45,6 +45,50 @@ export default function ProductGrid() {
             {filteredProducts.map((product, i) => (
               <ProductCard key={product.id} product={product} index={i} />
             ))}
+
+            {/* Professional Coming Soon Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl p-8 flex flex-col items-center justify-center text-center overflow-hidden h-full min-h-[400px]"
+              style={{
+                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%)',
+                border: '2px dashed rgba(212, 175, 55, 0.3)',
+              }}
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl bg-[#D4AF37] opacity-20" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full blur-3xl bg-[#D4AF37] opacity-20" />
+              
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="w-16 h-16 rounded-full bg-[#D4AF37] flex items-center justify-center mb-6 shadow-lg shadow-[#D4AF37]/20"
+              >
+                <span className="text-3xl text-gray-900 font-bold">✨</span>
+              </motion.div>
+
+              <h3 className="text-2xl font-black mb-4 gold-gradient-text">انتظروا المزيد قريباً!</h3>
+              
+              <p className="text-sm leading-relaxed mb-8 opacity-80" style={{ color: 'var(--color-text-secondary)' }}>
+                تشكيلة كنوز لا تنتهي.. نحن بصدد إضافة مجموعة واسعة من أحدث إكسسوارات المكاتب والمنتجات المعدنية العالمية. 
+              </p>
+
+              <div className="space-y-4 w-full">
+                <p className="text-xs font-bold tracking-widest uppercase opacity-60">اسأل عن طلبك الآن</p>
+                <motion.a
+                  href="https://wa.me/201092951265?text=مرحباً كنوز، هل يتوفر لديكم منتجات أخرى غير المعروضة في الموقع؟"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="block w-full py-4 rounded-xl font-bold transition-all text-gray-900"
+                  style={{ background: 'linear-gradient(135deg, #D4AF37, #E8CF6D)' }}
+                >
+                  تواصل عبر واتساب
+                </motion.a>
+              </div>
+            </motion.div>
           </AnimatePresence>
         </motion.div>
 
