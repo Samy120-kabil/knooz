@@ -1,0 +1,233 @@
+export const products = [
+  // ===== منتجات المستخدم الحقيقية فقط =====
+  {
+    id: 13,
+    name: 'طبة مدورة مستوردة',
+    description: 'طبة مدورة مستوردة عالية الجودة، متينة وتناسب مختلف الاستخدامات المكتبية.',
+    price: 4,
+    category: 'office',
+    image: '/products/tabba_round.jpg',
+    badge: 'الأكثر مبيعاً'
+  },
+  {
+    id: 14,
+    name: 'زاوية تجمع مصري',
+    description: 'زاوية تجمع مصرية قوية ومثالية لأعمال تجميع الأثاث والمكاتب.',
+    price: 4,
+    category: 'office',
+    image: '/products/assembly_angle.jpg',
+    badge: null
+  },
+  {
+    id: 15,
+    name: 'طبة مستوردة 8*16',
+    description: 'طبة مستوردة بمقاس 8*16 ملم، جودة ممتازة وسعر تنافسي.',
+    price: 30,
+    category: 'office',
+    image: '/products/tabba_8x16.jpg',
+    badge: 'جديد'
+  },
+  {
+    id: 16,
+    name: 'صدادة كالون متنية (100)',
+    description: 'صدادة كالون متنية عالية التحمل، تباع في مجموعات من 100 قطعة.',
+    price: 60,
+    category: 'office',
+    image: '/products/lock_stopper.jpg',
+    badge: null
+  },
+  {
+    id: 17,
+    name: 'كالون درج فاخر',
+    description: 'كالون درج عالي الجودة مع مفاتيح، سهل التركيب ويوفر أماناً تاماً لأدراجك.',
+    price: 85,
+    category: 'office',
+    image: '/products/drawer_lock.jpg',
+    badge: 'حصري'
+  },
+  {
+    id: 18,
+    name: 'عجل 40 مم (مصري/صيني)',
+    description: 'عجل 40 مم عالي الجودة. المصري بسعر 26 ج.م، والمستورد الصيني بسعر 40 ج.م.',
+    price: 26,
+    category: 'office',
+    image: '/products/wheel_40mm.jpg',
+    badge: 'متوفر نوعين'
+  },
+  {
+    id: 19,
+    name: 'شريط مكواة برزيلي رفيع 15 سم',
+    description: 'شريط مكواة برازيلي رفيع 15 سم. الكرتونة بها 27 لفة.',
+    price: 2900,
+    category: 'office',
+    image: '/products/iron_tape_brazil.jpg',
+    badge: 'سعر الكرتونة'
+  },
+  {
+    id: 20,
+    name: 'استرتش 10 سم (بالكيلو)',
+    description: 'رول استرتش 10 سم عالي المرونة. السعر للكيلو الواحد.',
+    price: 90,
+    category: 'office',
+    image: '/products/stretch_10cm.jpg',
+    badge: null
+  },
+  {
+    id: 21,
+    name: 'كيس كعب مسمار بني (200 قطعة)',
+    description: 'كيس كعب مسمار بلون بني. يحتوي الكيس على 200 قطعة.',
+    price: 180,
+    category: 'office',
+    image: '/products/nail_heel_brown.jpg',
+    badge: null
+  },
+  {
+    id: 22,
+    name: 'مسمار مستورد 1/2 * 8 (كرتونة)',
+    description: 'مسامير مستوردة مقاس 1/2 * 8. السعر للكرتونة الكاملة.',
+    price: 2100,
+    category: 'office',
+    image: '/products/nail_imported_half.jpg',
+    badge: 'سعر جملة'
+  },
+  {
+    id: 23,
+    name: 'مسمار 1 * 6 مستورد (شكارة)',
+    description: 'مسمار 1 * 6 مستورد عالي الجودة. الشكارة 25 كيلو.',
+    price: 3100,
+    category: 'office',
+    image: '/products/nail_imported_1x6.jpg',
+    badge: '25 كيلو'
+  },
+  {
+    id: 24,
+    name: 'رجل بيانو بلاك 15 سم',
+    description: 'رجل بيانو سوداء أنيقة بمقاس 15 سم للمكاتب والأثاث.',
+    price: 11,
+    category: 'office',
+    image: '/products/piano_leg_black.jpg',
+    badge: null
+  },
+  {
+    id: 25,
+    name: 'كعب عريض (شكارة 1000 قطعة)',
+    description: 'كعب عريض للأثاث والمكاتب. الشكارة بها 1000 قطعة.',
+    price: 700,
+    category: 'office',
+    image: '/products/wide_heel.jpg',
+    badge: '1000 قطعة'
+  },
+  {
+    id: 26,
+    name: 'كعب رفيع بـ pins (شكارة)',
+    description: 'كعب رفيع مزود بـ pins (أو بدون). الشكارة 1000 قطعة.',
+    price: 600,
+    category: 'office',
+    image: '/products/thin_heel_pins.jpg',
+    badge: '1000 قطعة'
+  },
+  {
+    id: 27,
+    name: 'جل بلاستيك 15 سم',
+    description: 'جل بلاستيك عالي الجودة بمقاس 15 سم.',
+    price: 17,
+    category: 'office',
+    image: '/products/plastic_gel_15cm.jpg',
+    badge: null
+  },
+  {
+    id: 28,
+    name: 'زاوية تجمع مصري/مستورد اوشن',
+    description: 'زاوية تجمع ماركة اوشن. الكرتونة بها 1000 قطعة.',
+    price: 6,
+    category: 'office',
+    image: '/products/assembly_angle_ocean.jpg',
+    badge: 'سعر القطعة'
+  },
+  {
+    id: 29,
+    name: 'رجل كاس 10.8 سم (ثقيلة)',
+    description: 'رجل كاس ثقيلة 3 ألوان. 10سم: 6.5 ج، 8سم: 5.5 ج. والخفيفة 10سم: 5 ج.',
+    price: 6.5,
+    category: 'office',
+    image: '/products/cup_leg_heavy.jpg',
+    badge: 'أسعار الجملة'
+  },
+  {
+    id: 30,
+    name: 'مقبض نيكل بلاستيك لامع',
+    description: 'مقبض بلاستيك بتشطيب نيكل لامع وتصميم عصري.',
+    price: 3,
+    category: 'office',
+    image: '/products/nickel_handle_plastic.jpg',
+    badge: null
+  },
+  {
+    id: 31,
+    name: 'مقبض استالس فاخر',
+    description: 'مقبض مصنوع من الاستالس المتين والمقاوم للصدأ.',
+    price: 10,
+    category: 'office',
+    image: '/products/stainless_handle.jpg',
+    badge: null
+  },
+  {
+    id: 32,
+    name: 'مسمار 3/4 مصري (شكارة)',
+    description: 'مسمار 3/4 مصري. الشكارة 25 كيلو.',
+    price: 3000,
+    category: 'office',
+    image: '/products/nail_egyptian_3q.jpg',
+    badge: '25 كيلو'
+  },
+  {
+    id: 33,
+    name: 'كالون درج (زور قصير)',
+    description: 'كالون درج زور قصير. الكرتونة بها 20 علبة.',
+    price: 145,
+    category: 'office',
+    image: '/products/drawer_lock_short.jpg',
+    badge: 'سعر العلبة'
+  },
+  {
+    id: 34,
+    name: 'مقبض بلاستيك اقتصادي',
+    description: 'مقبض بلاستيك عملي وسعر اقتصادي جداً.',
+    price: 2.27,
+    category: 'office',
+    image: '/products/plastic_handle.jpg',
+    badge: null
+  },
+  {
+    id: 35,
+    name: 'مجري 30.35 (عرض 45 سم)',
+    description: 'مجرى أدراج 30.35 بعرض 45 سم لحركة سلسة.',
+    price: 43,
+    category: 'office',
+    image: '/products/slide_30_35.jpg',
+    badge: null
+  },
+  {
+    id: 36,
+    name: 'زاوية 3* ممتاز (كيس 100 قطعة)',
+    description: 'زاوية 3* ممتاز. الكيس يحتوي على 100 قطعة.',
+    price: 60,
+    category: 'office',
+    image: '/products/angle_3_excellent.jpg',
+    badge: '100 قطعة'
+  },
+  {
+    id: 37,
+    name: 'صدادة كالون مفردة (كيس 100 قطعة)',
+    description: 'صدادة كالون مفردة. الكيس يحتوي على 100 قطعة.',
+    price: 60,
+    category: 'office',
+    image: '/products/single_lock_stopper.jpg',
+    badge: '100 قطعة'
+  }
+];
+
+export const categories = [
+  { id: 'all', label: 'جميع المنتجات', icon: '🏷️' },
+  { id: 'office', label: 'إكسسوارات مكاتب', icon: '🖊️' },
+];
