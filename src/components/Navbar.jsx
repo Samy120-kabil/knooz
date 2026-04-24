@@ -9,7 +9,7 @@ const navLinks = [
   { id: 'home', label: 'الرئيسية', href: '#home' },
   { id: 'products', label: 'المنتجات', href: '#products' },
   { id: 'about', label: 'من نحن', href: '#about' },
-  { id: 'testimonials', label: 'آراء العملاء', href: '#testimonials' },
+  { id: 'testimonials', label: 'آراء العملاء', href: '#reviews' },
   { id: 'contact', label: 'تواصل معنا', href: '#contact' },
 ];
 
@@ -23,6 +23,36 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, href) => {
+    // If it's an anchor link, handle it manually to ensure it works on mobile
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.replace('#', '');
+      const elem = document.getElementById(targetId);
+      
+      // Close menu first
+      setIsMobileMenuOpen(false);
+      
+      // Small delay to let the menu start closing before scrolling
+      setTimeout(() => {
+        if (elem) {
+          const offset = 80; // height of sticky navbar
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = elem.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <>
@@ -70,7 +100,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Logo />
+            <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>
+              <Logo />
+            </a>
 
             {/* Desktop Nav Links */}
             <div className="hidden lg:flex items-center gap-6">
@@ -78,6 +110,7 @@ export default function Navbar() {
                 <a
                   key={link.id}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="px-2 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:text-[#D4AF37]"
                   style={{ color: 'var(--color-text-secondary)' }}
                   id={`nav-${link.id}`}
@@ -140,7 +173,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden"
+              className="lg:hidden absolute top-full left-0 w-full overflow-hidden shadow-xl"
               style={{ backgroundColor: 'var(--color-surface)', borderTop: '1px solid var(--color-border)' }}
             >
               <div className="px-4 py-4 space-y-1">
@@ -153,7 +186,7 @@ export default function Navbar() {
                     transition={{ delay: i * 0.05 }}
                     className="block px-4 py-3 rounded-lg text-base font-medium transition-colors hover:text-[#D4AF37]"
                     style={{ color: 'var(--color-text)' }}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.label}
                   </motion.a>

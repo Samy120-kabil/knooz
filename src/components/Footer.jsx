@@ -46,7 +46,7 @@ export default function Footer() {
             {['الرئيسية', 'المنتجات', 'من نحن', 'آراء العملاء', 'تواصل معنا'].map((link, i) => (
               <a
                 key={i}
-                href={`#${['home', 'products', 'about', 'testimonials', 'contact'][i]}`}
+                href={`#${['home', 'products', 'about', 'reviews', 'contact'][i]}`}
                 className="block text-sm transition-colors hover:text-[#D4AF37] hover:translate-x-[-5px] duration-200"
                 style={{ color: 'var(--color-text-secondary)' }}
               >

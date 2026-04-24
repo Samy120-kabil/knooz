@@ -33,7 +33,7 @@ export default function Testimonials() {
 
   return (
     <section
-      id="testimonials"
+      id="reviews"
       className="section-padding overflow-hidden"
       style={{ backgroundColor: 'var(--color-surface)' }}
     >
