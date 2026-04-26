@@ -74,29 +74,28 @@ export default function HeroSection() {
 
             {/* Main Heading */}
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight"
+              className="text-4xl md:text-5xl lg:text-7xl font-black leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <span style={{ color: 'var(--color-text)' }}>اكتشف عالم </span>
+              <span style={{ color: 'var(--color-text)' }}>الجودة و</span>
               <span className="gold-shimmer">الفخامة</span>
               <br />
-              <span style={{ color: 'var(--color-text)' }}>مع </span>
+              <span style={{ color: 'var(--color-text)' }}>في كل تفصيلة مع </span>
               <span className="gold-gradient-text">كنوز</span>
             </motion.h1>
 
-            {/* Description */}
-            <motion.p
-              className="text-lg md:text-xl leading-relaxed max-w-lg"
-              style={{ color: 'var(--color-text-secondary)' }}
+            {/* Sub Heading */}
+            <motion.h2
+              className="text-xl md:text-3xl font-bold"
+              style={{ color: '#D4AF37' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
             >
-              متجرك المتخصص في إكسسوارات المكاتب والمنتجات المعدنية عالية الجودة. 
-              نجمع بين دقة الصناعة وجودة الخامات لتوفير أفضل الحلول لمشاريعك.
-            </motion.p>
+              لسنا الوحيدون ولكننا المتميزون وبأقل سعر
+            </motion.h2>
 
             {/* CTA Buttons */}
             <motion.div

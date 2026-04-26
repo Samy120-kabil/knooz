@@ -35,31 +35,42 @@ export default function Chatbot() {
     setInputValue('');
     setIsTyping(true);
 
-    // Bot Response Logic based on site content
+    // Bot Response Logic - KNOOZ Encyclopedia
     setTimeout(() => {
-      let botResponse = 'عذراً، لم أفهم سؤالك تماماً. يمكنك الاستفسار عن (الأسعار، الألومنيوم، إكسسوارات المكاتب، الضمان، أو التوصيل).';
+      let botResponse = '';
+      const lowerQuery = query.trim().toLowerCase();
       
-      const lowerQuery = query.toLowerCase();
-      
-      // Extensive Keyword matching
-      if (lowerQuery.includes('سعر') || lowerQuery.includes('بكام') || lowerQuery.includes('اسعار')) {
-        botResponse = 'تتراوح أسعار إكسسوارات المكاتب من 180 ج.م إلى 650 ج.م، بينما تبدأ أعمال الألومنيوم من 2800 ج.م للشبابيك وتصل إلى 8500 ج.م للواجهات. الأسعار موضحة بجانب كل منتج في الموقع.';
-      } else if (lowerQuery.includes('توصيل') || lowerQuery.includes('شحن') || lowerQuery.includes('المحافظات')) {
-        botResponse = 'نعم، نحن فخورون بخدمة جميع أنحاء الجمهورية. نوفر خدمة التوصيل والتركيب الاحترافي لضمان أعلى مستوى من الجودة.';
-      } else if (lowerQuery.includes('الومنيوم') || lowerQuery.includes('ألومنيوم')) {
-        botResponse = 'نحن متخصصون في أعمال الألومنيوم الفاخرة: نوافذ مزدوجة عازلة للصوت، أبواب عصرية، واجهات كرتن وول، قواطع مكاتب، ودرابزين. نستخدم أجود الخامات المقاومة للصدأ.';
-      } else if (lowerQuery.includes('مكتب') || lowerQuery.includes('اكسسوارات') || lowerQuery.includes('إكسسوار')) {
-        botResponse = 'نقدم مجموعة فاخرة من إكسسوارات المكاتب: حوامل أقلام ألومنيوم، منظمات مكتب مطلية بالذهب، ساعات مكتب كلاسيكية، وحوامل لابتوب قابلة للتعديل.';
-      } else if (lowerQuery.includes('عنوان') || lowerQuery.includes('مكان') || lowerQuery.includes('فين')) {
-        botResponse = 'مقرنا الرئيسي في القاهرة ولكننا ننفذ مشاريعنا في كافة محافظات مصر. يمكنك طلب معاينة فنية لأعمال الألومنيوم عبر واتساب.';
-      } else if (lowerQuery.includes('ضمان') || lowerQuery.includes('مضمون')) {
-        botResponse = 'بكل تأكيد! نوفر ضماناً لمدة عامين على جميع إكسسوارات المكاتب، وضماناً شاملاً لمدة 5 سنوات على كافة أعمال الألومنيوم لضمان راحة بالك.';
-      } else if (lowerQuery.includes('تواصل') || lowerQuery.includes('رقم') || lowerQuery.includes('تلفون') || lowerQuery.includes('واتس')) {
-        botResponse = 'يمكنك التواصل معنا عبر واتساب أو الهاتف على الرقم 01092951265، أو عبر البريد الإلكتروني ebrahimwa63@gmail.com. نحن متاحون يومياً من 9 ص حتى 9 م.';
-      } else if (lowerQuery.includes('مين') || lowerQuery.includes('نبذه') || lowerQuery.includes('كنوز')) {
-        botResponse = 'كنوز هي شركة رائدة في تجهيز المكاتب وأعمال الألومنيوم في مصر منذ 5 سنوات. خدمنا أكثر من 500 عميل ونفذنا أكثر من 200 مشروع بنجاح باهر.';
-      } else if (lowerQuery.includes('راي') || lowerQuery.includes('قالوا') || lowerQuery.includes('عملاء')) {
-        botResponse = 'عملاؤنا يثقون بنا! تقول سارة أحمد (مصممة): "كنوز هي خياري الأول لتجهيز المكاتب"، ويشيد المهندس أحمد بجودة أعمال الألومنيوم ودقة المواعيد.';
+      // 1. About Knooz
+      if (lowerQuery.includes('مين') || lowerQuery.includes('كنوز') || lowerQuery.includes('شركة') || lowerQuery.includes('تخصص')) {
+        botResponse = 'شركة كنوز هي رائدة في صناعة وتجارة إكسسوارات المكاتب والأثاث المعدنية. نحن نركز على تقديم منتجات تجمع بين "الجودة والفخامة" بأفضل الأسعار في السوق المصري، ونخدم آلاف العملاء والمشاريع منذ سنوات.';
+      } 
+      // 2. Products & Prices
+      else if (lowerQuery.includes('منتج') || lowerQuery.includes('سعر') || lowerQuery.includes('بكام') || lowerQuery.includes('طبه') || lowerQuery.includes('طبة')) {
+        botResponse = 'نوفر تشكيلة واسعة من إكسسوارات المكاتب (طبات، حوامل، منظمات). الأسعار موضحة بدقة بجانب كل منتج في الموقع. إذا كنت تبحث عن نوع معين غير معروض، تواصل معنا فوراً فقد يكون متاحاً في مخازنا.';
+      }
+      // 3. Contact & Hours
+      else if (lowerQuery.includes('تواصل') || lowerQuery.includes('رقم') || lowerQuery.includes('تلفون') || lowerQuery.includes('ساعه') || lowerQuery.includes('مواعيد')) {
+        botResponse = 'يسعدنا تواصلك! رقم الهاتف والواتساب هو 01092951265. مواعيد العمل الرسمية من 9 صباحاً وحتى 9 مساءً طوال أيام الأسبوع. يمكنك أيضاً مراسلتنا عبر الإيميل: ebrahimwa63@gmail.com.';
+      }
+      // 4. Ordering Process
+      else if (lowerQuery.includes('طلب') || lowerQuery.includes('اشتري') || lowerQuery.includes('سله') || lowerQuery.includes('سلة') || lowerQuery.includes('كيف')) {
+        botResponse = 'طريقة الطلب بسيطة جداً: 1. أضف المنتجات للسلة. 2. افتح السلة من الأيقونة العلوية. 3. اضغط على "اطلب عبر واتساب" أو "الإيميل". سنستلم طلبك ونؤكده معك فوراً.';
+      }
+      // 5. Offers & Bulk
+      else if (lowerQuery.includes('عرض') || lowerQuery.includes('عروض') || lowerQuery.includes('خصم') || lowerQuery.includes('جمله') || lowerQuery.includes('جملة')) {
+        botResponse = 'نحن نقدم خصومات حصرية جداً للكميات الكبيرة والمشاريع! تابع شريط الأخبار أسفل الموقع لمعرفة آخر العروض، أو تواصل معنا مباشرة للحصول على تسعير خاص للجملة.';
+      }
+      // 6. Out of scope
+      else if (
+        !lowerQuery.includes('كنوز') && !lowerQuery.includes('منتج') &&
+        (lowerQuery.includes('أكل') || lowerQuery.includes('لعب') || lowerQuery.includes('سياسة') || 
+         lowerQuery.includes('رياضة') || lowerQuery.includes('خبر') || lowerQuery.length < 2)
+      ) {
+        botResponse = 'عفواً، أنا خبير بموقع كنوز فقط للاستفسار عن المنتجات والخدمات. للاستفسارات الأخرى يمكنك التواصل مع الإدارة مباشرة عبر الهاتف.';
+      } 
+      // Default
+      else {
+        botResponse = 'أهلاً بك في موسوعة كنوز! أنا هنا لمساعدتك في كل ما يخص منتجاتنا، الأسعار، وطريقة الطلب. هل حابب تسأل عن منتج معين أو عروض الجملة؟';
       }
 
       setMessages(prev => [...prev, {
@@ -69,7 +80,7 @@ export default function Chatbot() {
         time: new Date()
       }]);
       setIsTyping(false);
-    }, 1200);
+    }, 800); // Reduced delay for faster feel
   };
 
   return (

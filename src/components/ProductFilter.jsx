@@ -8,18 +8,17 @@ export default function ProductFilter({ activeCategory, onCategoryChange }) {
         <motion.button
           key={cat.id}
           onClick={() => onCategoryChange(cat.id)}
-          className="relative px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer"
+          className="relative px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer z-10"
           style={{
-            backgroundColor: activeCategory === cat.id ? '#D4AF37' : 'var(--color-surface)',
+            backgroundColor: activeCategory === cat.id ? 'transparent' : 'var(--color-surface)',
             color: activeCategory === cat.id ? '#1a1a2e' : 'var(--color-text)',
-            border: `1px solid ${activeCategory === cat.id ? '#D4AF37' : 'var(--color-border)'}`,
-            boxShadow: activeCategory === cat.id ? '0 4px 15px rgba(212, 175, 55, 0.3)' : 'none',
+            border: `1px solid ${activeCategory === cat.id ? 'transparent' : 'var(--color-border)'}`,
           }}
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
           id={`filter-${cat.id}`}
         >
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 relative z-10">
             <span>{cat.icon}</span>
             <span>{cat.label}</span>
           </span>
@@ -29,7 +28,7 @@ export default function ProductFilter({ activeCategory, onCategoryChange }) {
               className="absolute inset-0 rounded-xl"
               style={{
                 background: 'linear-gradient(135deg, #D4AF37, #E8CF6D)',
-                zIndex: -1,
+                zIndex: 0,
               }}
               transition={{ type: 'spring', bounce: 0.3, duration: 0.5 }}
             />

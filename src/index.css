@@ -177,3 +177,31 @@ body {
     padding: 7rem 4rem;
   }
 }
+
+/* ===== Pulse Slow Animation for Badges ===== */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* ===== Smooth Infinite Ticker (proven technique) ===== */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;          /* shrink-wraps the duplicated content */
+  will-change: transform;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;            /* clip, never hide */
+}
